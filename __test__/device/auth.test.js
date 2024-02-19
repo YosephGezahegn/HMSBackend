@@ -30,12 +30,12 @@ describe('POST /register -> if email and username is given', () => {
     let registeredUser = await request(app)
       .post('/device/auth/register')
       .send({
-        'username':'Nona_Hahn',
-        'password':'PoursTsA2cs8C7U',
-        'email':'Albin96@hotmail.com',
-        'name':'Lori Jerde',
+        'username':'Ollie61',
+        'password':'4q7kx9EkJHQr42l',
+        'email':'Ida76@gmail.com',
+        'name':'Luther Gottlieb',
         'userType':authConstant.USER_TYPES.User,
-        'mobileNo':'(756) 204-3245'
+        'mobileNo':'(516) 400-5206'
       });
     expect(registeredUser.headers['content-type']).toEqual('application/json; charset=utf-8');
     expect(registeredUser.body.status).toBe('SUCCESS');
@@ -50,8 +50,8 @@ describe('POST /login -> if username and password is correct', () => {
       .post('/device/auth/login')
       .send(
         {
-          username: 'Nona_Hahn',
-          password: 'PoursTsA2cs8C7U'
+          username: 'Ollie61',
+          password: '4q7kx9EkJHQr42l'
         }
       );
     expect(user.statusCode).toBe(200);
@@ -70,7 +70,7 @@ describe('POST /login -> if username is incorrect', () => {
       .send(
         {
           username: 'wrong.username',
-          password: 'PoursTsA2cs8C7U'
+          password: '4q7kx9EkJHQr42l'
         }
       );
 
@@ -85,7 +85,7 @@ describe('POST /login -> if password is incorrect', () => {
       .post('/device/auth/login')
       .send(
         {
-          username: 'Nona_Hahn',
+          username: 'Ollie61',
           password: 'wrong@password'
         }
       );
@@ -132,7 +132,7 @@ describe('POST /forgot-password -> if email passed from request body is valid an
   test('should return success message', async () => {
     let user = await request(app)
       .post('/device/auth/forgot-password')
-      .send({ 'email':'Albin96@hotmail.com', });
+      .send({ 'email':'Ida76@gmail.com', });
     
     expect(user.statusCode).toBe(200);
     expect(user.body.status).toBe('SUCCESS');
@@ -145,8 +145,8 @@ describe('POST /validate-otp -> otp is sent in request body and OTP is correct',
       .post('/device/auth/login')
       .send(
         {
-          username: 'Nona_Hahn',
-          password: 'PoursTsA2cs8C7U'
+          username: 'Ollie61',
+          password: '4q7kx9EkJHQr42l'
         }).then(login => () => {
         return request(app)
           .get(`/device/api/v1/user/${login.body.data.id}`)
@@ -192,8 +192,8 @@ describe('PUT /reset-password -> code is sent in request body and code is correc
       .post('/device/auth/login')
       .send(
         {
-          username: 'Nona_Hahn',
-          password: 'PoursTsA2cs8C7U'
+          username: 'Ollie61',
+          password: '4q7kx9EkJHQr42l'
         }).then(login => () => {
         return request(app)
           .get(`/device/api/v1/user/${login.body.data.id}`)
