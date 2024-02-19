@@ -33,7 +33,6 @@ exports.schemaKeys = joi.object({
   SideEffects: joi.any(),
   DrugInteractions: joi.any(),
   Allergies: joi.any(),
-  CreatedAt: joi.date().options({ convert: true }).allow(null).allow(''),
   isDeleted: joi.boolean(),
   isActive: joi.boolean()
 }).unknown(true);
@@ -60,7 +59,6 @@ exports.updateSchemaKeys = joi.object({
   SideEffects: joi.any(),
   DrugInteractions: joi.any(),
   Allergies: joi.any(),
-  CreatedAt: joi.date().options({ convert: true }).allow(null).allow(''),
   isDeleted: joi.boolean(),
   isActive: joi.boolean(),
   id: joi.number().integer()
@@ -91,7 +89,6 @@ exports.findFilterKeys = joi.object({
       SideEffects: joi.alternatives().try(joi.array().items(),joi.any(),joi.object()),
       DrugInteractions: joi.alternatives().try(joi.array().items(),joi.any(),joi.object()),
       Allergies: joi.alternatives().try(joi.array().items(),joi.any(),joi.object()),
-      CreatedAt: joi.alternatives().try(joi.array().items(),joi.date().options({ convert: true }),joi.object()),
       isDeleted: joi.alternatives().try(joi.array().items(),joi.boolean(),joi.object()),
       isActive: joi.alternatives().try(joi.array().items(),joi.boolean(),joi.object()),
       id: joi.any()

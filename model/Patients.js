@@ -68,7 +68,6 @@ let Patients = sequelize.define('Patients',{
   SpouseDOB:{ type:DataTypes.DATE },
   isDeleted:{ type:DataTypes.BOOLEAN },
   isActive:{ type:DataTypes.BOOLEAN },
-  createdAt:{ type:DataTypes.DATE },
   updatedAt:{ type:DataTypes.DATE },
   addedBy:{ type:DataTypes.INTEGER },
   updatedBy:{ type:DataTypes.INTEGER }

@@ -34,7 +34,6 @@ let Rooms = sequelize.define('Rooms',{
   LastCleaningDate:{ type:DataTypes.DATE },
   NextCleaningDate:{ type:DataTypes.DATE },
   Comments:{ type:DataTypes.TEXT },
-  CreatedAt:{ type:DataTypes.DATE },
   isDeleted:{ type:DataTypes.BOOLEAN },
   isActive:{ type:DataTypes.BOOLEAN },
   updatedAt:{ type:DataTypes.DATE },

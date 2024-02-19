@@ -45,7 +45,6 @@ let Department = sequelize.define('Department',{
   OpeningTime:{ type:DataTypes.DATE },
   ClosingTime:{ type:DataTypes.DATE },
   isDeleted:{ type:DataTypes.BOOLEAN },
-  createdAt:{ type:DataTypes.DATE },
   updatedAt:{ type:DataTypes.DATE },
   addedBy:{ type:DataTypes.INTEGER },
   updatedBy:{ type:DataTypes.INTEGER }

@@ -40,7 +40,6 @@ let Medication = sequelize.define('Medication',{
   SideEffects:{ type:DataTypes.TEXT },
   DrugInteractions:{ type:DataTypes.TEXT },
   Allergies:{ type:DataTypes.TEXT },
-  CreatedAt:{ type:DataTypes.DATE },
   isDeleted:{ type:DataTypes.BOOLEAN },
   isActive:{ type:DataTypes.BOOLEAN },
   updatedAt:{ type:DataTypes.DATE },

@@ -56,7 +56,6 @@ const updateProfile = async (req, res) => {
       return res.validationError({ message : `Invalid values in parameters, ${validateRequest.message}` });
     }
     if (data.password) delete data.password;
-    if (data.createdAt) delete data.createdAt;
     if (data.updatedAt) delete data.updatedAt;
     if (data.id) delete data.id;
     let result = await dbService.update(User, { id :req.user.id } ,data);

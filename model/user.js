@@ -13,7 +13,8 @@ let User = sequelize.define('user',{
   id:{
     type:DataTypes.INTEGER,
     primaryKey:true,
-    autoIncrement:true
+    autoIncrement:true,
+    unique:true
   },
   username:{ type:DataTypes.STRING },
   password:{ type:DataTypes.STRING },
@@ -22,7 +23,6 @@ let User = sequelize.define('user',{
   userType:{ type:DataTypes.INTEGER },
   isActive:{ type:DataTypes.BOOLEAN },
   isDeleted:{ type:DataTypes.BOOLEAN },
-  createdAt:{ type:DataTypes.DATE },
   updatedAt:{ type:DataTypes.DATE },
   addedBy:{ type:DataTypes.INTEGER },
   updatedBy:{ type:DataTypes.INTEGER },

@@ -26,7 +26,6 @@ exports.schemaKeys = joi.object({
   LastCleaningDate: joi.date().options({ convert: true }).allow(null).allow(''),
   NextCleaningDate: joi.date().options({ convert: true }).allow(null).allow(''),
   Comments: joi.any(),
-  CreatedAt: joi.date().options({ convert: true }).allow(null).allow(''),
   isDeleted: joi.boolean(),
   isActive: joi.boolean()
 }).unknown(true);
@@ -46,7 +45,6 @@ exports.updateSchemaKeys = joi.object({
   LastCleaningDate: joi.date().options({ convert: true }).allow(null).allow(''),
   NextCleaningDate: joi.date().options({ convert: true }).allow(null).allow(''),
   Comments: joi.any(),
-  CreatedAt: joi.date().options({ convert: true }).allow(null).allow(''),
   isDeleted: joi.boolean(),
   isActive: joi.boolean(),
   id: joi.number().integer()
@@ -70,7 +68,6 @@ exports.findFilterKeys = joi.object({
       LastCleaningDate: joi.alternatives().try(joi.array().items(),joi.date().options({ convert: true }),joi.object()),
       NextCleaningDate: joi.alternatives().try(joi.array().items(),joi.date().options({ convert: true }),joi.object()),
       Comments: joi.alternatives().try(joi.array().items(),joi.any(),joi.object()),
-      CreatedAt: joi.alternatives().try(joi.array().items(),joi.date().options({ convert: true }),joi.object()),
       isDeleted: joi.alternatives().try(joi.array().items(),joi.boolean(),joi.object()),
       isActive: joi.alternatives().try(joi.array().items(),joi.boolean(),joi.object()),
       id: joi.any()
