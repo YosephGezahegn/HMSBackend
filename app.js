@@ -55,8 +55,7 @@ app.use(session({
 }));
 
 app.get('/', (req, res) => {
- // res.render('index');
-  app.use(routes);
+ res.render('index');
 });
 
 if (process.env.NODE_ENV !== 'test' ) {
