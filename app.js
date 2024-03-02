@@ -57,7 +57,7 @@ app.use(session({
 app.get('/', (req, res) => {
  res.render('index');
 });
-
+    app.use(routes);
 if (process.env.NODE_ENV !== 'test' ) {
   models.sequelize.sync({ alter:true }).then(()=>{
         
